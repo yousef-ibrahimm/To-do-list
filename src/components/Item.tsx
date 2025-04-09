@@ -16,6 +16,12 @@ const Item: React.FC<ItemProps> = ({ task, onToggle, onDelete }) => {
           : "bg-white text-gray-800"
       } hover:shadow-md transition-all`}
     >
+      <input
+        type="checkbox"
+        checked={task.completed}
+        onChange={() => onToggle(task.id)}
+        className="mr-4 cursor-pointer"
+      />
       <span
         onClick={() => onToggle(task.id)}
         className="flex-grow cursor-pointer"
